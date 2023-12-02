@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Design by foolishdeveloper.com -->
+    
+ 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!--Stylesheet-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login_register.css') }}">
+
+    
+</head>
+<body>
+    <div class="main-heading-container">
+        Litigat <strong>8</strong>
+    </div>
+    <!-- <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div> -->
+    <form action="{{ url_for('login') }}" method="POST" >
+       
+        <h3> 
+            <img src="{{ url_for('static', filename='img/LitigateLogo.png') }}" alt="Logo">
+           
+           
+        </h3>
+
+        <label for="username">Username</label>
+        <input type="text" placeholder="Email or Phone" name="username" id="username">
+
+        <label for="password">Password</label>
+        <input type="password" placeholder="Password" name="password"  id="password">
+
+        <button>Log In</button>
+       
+    </form>
+</body>
+</html>

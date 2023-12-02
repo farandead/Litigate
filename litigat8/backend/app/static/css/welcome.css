@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');body{
+    background-color: rgb(9, 11, 17);
+    padding: 0%;
+    margin: 0%;
+    color: rgb(218, 218, 218);
+    font-family: 'Space Grotesk', sans-serif;
+
+}
+.main-container{
+    display: flex;
+    width: 100%;
+}
+.main-heading-container {
+    font-weight: 00;
+    font-size: 4vmin;
+    letter-spacing: -2px;
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    /* This positions the container at the top-left corner */
+}
+.sub-containers-animation{
+    width: 60%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    flex-direction: column;
+    padding-left: 10vmin;
+}
+.sub-containers-animation-heading{
+    font-weight: bold;
+    font-size: 5vmin;
+    letter-spacing: -1px;
+}
+.sub-container-options{
+    background-color: black;
+    width: 40%;
+    min-height: 100vmin;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    flex-direction: column;
+    text-align: center;
+    box-shadow: 1px 10px 1px black;
+}
+.sub-containers-animation-paragraph {
+    font-size: 3vmin;
+    filter: brightness(70%);
+}
+.footnote-container{
+    margin-bottom: -41vmin;
+    margin-top: 11vmin;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+}
+.footnote-container span{
+  
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+    flex-direction: row;
+}
+.login-option-container{
+    padding-bottom: 30vmin;
+}
+.footnote-logo{
+    
+    align-items: center;
+    text-align: center;
+   
+    justify-content: center;
+}
+.footnote-logo img{
+    width: 7%;
+    
+}
+.login-option-container-heading{
+    font-size: 4vmin;
+    font-weight: bolder;
+    padding: 0vmin 1vmin;
+}
+.login-option-container-button a button{
+    padding: 1.5vmin 9vmin;
+    margin: 1vmin;
+    border-radius: 0.5vmin;
+    outline: none;
+    border: none;
+    background-color:  #3b539f;
+    color: white;
+    font-family: 'Space Grotesk', sans-serif;
+
+}
+.login-option-container-button a button:hover{
+   
+    background-color:  #4e6dd1;
+    cursor: pointer;
+    
+
+}
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+.typing-effect {
+    overflow: hidden; /* Ensures the content is clipped */
+    white-space: nowrap; /* Keeps the content on a single line */
+    border-right: .05em solid; /* The cursor */
+    animation: typing 2s steps(40, end), blink-caret .5s step-end infinite;
+    /* Adjust the duration and steps according to your content length */
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: black; }
+}

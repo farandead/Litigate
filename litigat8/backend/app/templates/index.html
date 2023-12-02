@@ -8,7 +8,20 @@
 <body>
     <div id="main-content-container">
     <div id="container0">
-        
+        <div class="side-panel-container">
+            Litigat<strong>8</strong>
+        </div>
+        <div class="side-panel-container-info">
+            <div class="login-details">
+                <img src="{{ url_for('static', filename='img/person-circle.svg') }}" alt="Logo">
+                <p>farandeadz@gmail.com</p>
+            </div>
+            <form action="{{ url_for('logout') }}" method="get">
+                <div class="logout-container">
+                    <button id="logout_button">Log out</button>
+                </div>
+            </form>
+        </div>
     </div>
     <div id="container">
         <div class="heading-container">
@@ -19,11 +32,49 @@
             </p>
         </div>
         <div id="output">
+        {% for interaction in interactions %}
+            {% if interaction.type == 'user' %}
+                <!-- User input -->
+                <div class="responses-person">
+                    <div class="responses-structure-img responses-structure-img-person">
+                        <img src="{{ url_for('static', filename='img/person-circle.svg') }}" alt="User">
+                    </div>
+                    <div class="responses-structure-info">
+                        <div class="responses-heading">
+                            You
+                        </div>
+                        <div class="responses-response">
+                            {{ interaction.text }}
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                <!-- AI response -->
+                <div class="responses-AI">
+                    <div class="responses-structure-img">
+                        <img src="{{ url_for('static', filename='img/LitigateLogo.png') }}" alt="Logo">
+                    </div>
+                    <div class="responses-structure-info">
+                        <div class="responses-heading">
+                            Litigat8
+                        </div>
+                        <div class="responses-response">
+                            {{ interaction.text }}
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+                
             
+            
+          
+
+    
         </div>
-        <form id="input-form" action="/" method="post">
+        <form id="input-form" action="{{ url_for('submit') }}" method="POST">
             <input type="text" id="user_input" name="user_input" placeholder="Type your legal query here...">
-            <button type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send" viewBox="0 0 16 16">
+            <button id ="sendbutton"type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send" viewBox="0 0 16 16">
                 <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"/>
               </svg></button>
         </form>

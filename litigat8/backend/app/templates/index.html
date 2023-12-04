@@ -6,7 +6,15 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <div id="main-content-container">
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+            <!-- Display your message -->
+            <div>{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+        <div id="main-content-container">
     <div id="container0">
         <div class="side-panel-container">
             Litigat<strong>8</strong>
@@ -14,7 +22,7 @@
         <div class="side-panel-container-info">
             <div class="login-details">
                 <img src="{{ url_for('static', filename='img/person-circle.svg') }}" alt="Logo">
-                <p>farandeadz@gmail.com</p>
+                <p>{{ user.username }}</p> <!-- Display the user's email -->
             </div>
             <form action="{{ url_for('logout') }}" method="get">
                 <div class="logout-container">

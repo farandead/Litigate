@@ -43,6 +43,12 @@ background: linear-gradient(
 right: -30px;
 bottom: -80px;
 }
+.error_message{
+    background-color: red;
+    color: white;
+    text-align: center;
+    padding: 3vmin 2vmin;
+}
 form img{
 width: 30%;
 margin: auto;

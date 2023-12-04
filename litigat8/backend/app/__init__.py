@@ -1,6 +1,7 @@
 from flask import *
 from markupsafe import escape
 from werkzeug.security import generate_password_hash, check_password_hash
+from functools import wraps
 from database.db import db
 from database.db import *
 def create_app():
@@ -15,15 +16,51 @@ def create_app():
         db.create_all()
     # Define routes directly here
    
+    def login_required(f):
+        @wraps(f)
+        def decorated_function(*args, **kwargs):
+            if 'user_id' not in session:
+                flash('You need to be logged in to view this page.')
+                return redirect(url_for('login'))
+            return f(*args, **kwargs)
+        return decorated_function
+    
+    @app.route('/main',methods=['GET'])
+    def main():
+        return render_template('welcome_page.html')
 
     @app.route('/',methods=['GET'])
     def index():
-        interactions.clear()
-        return render_template('welcome_page.html')
+        user_id = session.get('user_id')
+        if user_id:
+            user = User.query.get(user_id)
+            if user:
+                return render_template('index.html', user=user)
+            else:
+       
+                return redirect(url_for('main'))  
+        else:
+            # Handle case where user is not logged in
+
+            return redirect(url_for('main'))
+
     @app.route('/chat',methods=['GET'])
+    @login_required
     def home():
-        interactions.clear()
-        return render_template('index.html')
+        user_id = session.get('user_id')
+        if user_id:
+            user = User.query.get(user_id)
+            if user:
+                return render_template('index.html', user=user)
+            else:
+                flash('You need to be logged in to view this page.')
+                return redirect(url_for('login'))  
+        else:
+            # Handle case where user is not logged in
+            flash('You need to be logged in to view this page.')
+            return redirect(url_for('login'))
+        
+        
     
     @app.route('/submit', methods=['GET', 'POST'])
     def submit():
@@ -66,12 +103,13 @@ def create_app():
                 session['user_id'] = user.id
                 return redirect(url_for('home'))
             else:
-                # Handle login failed
+                flash('Invalid username or password.')
                 pass
         return render_template('login.html')
     
     @app.route('/logout')
     def logout():
+        interactions.clear()
         session.pop('user_id', None)
-        return redirect(url_for('login'))
+        return redirect(url_for('main'))
     return app

@@ -12,6 +12,22 @@
     
 </head>
 <body>
+    <style>
+        .error_message{
+            background-color: red;
+            color: white;
+            text-align: center;
+            padding: 3vmin 2vmin;
+        }
+    </style>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+            <!-- Display your message -->
+            <div class="error_message">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
     <div class="main-heading-container">
         Litigat <strong>8</strong>
     </div>

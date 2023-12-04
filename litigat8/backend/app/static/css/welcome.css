@@ -124,3 +124,9 @@
     from, to { border-color: transparent }
     50% { border-color: black; }
 }
+.error_message{
+    background-color: red;
+    color: white;
+    text-align: center;
+    padding: 3vmin 2vmin;
+}

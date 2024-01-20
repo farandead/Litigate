@@ -25,12 +25,9 @@ def create_app():
         print(prompt)
         messages = []
         client = OpenAI(
-            # This is the default and can be omitted
-            api_key="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",
+            api_key="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",
         )
-        messages.append( {"role": "system", "content": "The following is a conversation with an AI legal assistant specialized in household and tenant law. "
-                            "The assistant provides information about rights and responsibilities of tenants and landlords, lease agreements, "
-                            "rent control, eviction processes, and other related legal matters"})
+        messages.append( {"role": "system", "content": "As an AI legal assistant specializing in household and tenant law, your task is to provide users with comprehensive information on the rights and responsibilities of tenants and landlords. You should be equipped to discuss lease agreements, rent control, eviction processes, and other relevant legal matters. Be prepared to reference case laws and legal resources when necessary to support your advice. It's important that your responses are clear, accurate, and reflect the most current legal standards and practices. Your goal is to assist users in understanding their legal position and options in a variety of scenarios related to tenancy and property law."})
         messages.append( {"role": "user", "content": prompt })
 
         response = client.chat.completions.create(
@@ -102,8 +99,11 @@ def create_app():
             
             # Simulate an AI response (replace with your actual AI logic)
             ai_response =  get_ai_response(f"Tenant Law Question: {user_input}\nAnswer:")
-          
+            ai_response = "s an AI legal assistant specializing in household and tenant law, your task is to provide users with comprehensive information on the rights and responsibilities of tenants and landlords. You should be equipped to discuss lease agreements, rent control, eviction processes, and other relevant legal matters. Be prepared to reference case laws and legal resources when necessary to support your advice. It's important that your responses are clear, accurate, and reflect the most current legal standards and practices. Your goal is to assist users in understanding their legal position"
             # Append user input and AI response to the interactions list
+            if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+                print("goes hereeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee")
+                return ai_response  # Return just the AI response for AJAX requests
             interactions.append({'type': 'user', 'text': user_input})
             interactions.append({'type': 'ai', 'text': ai_response})
             

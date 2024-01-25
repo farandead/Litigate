@@ -101,9 +101,7 @@ def create_app():
             ai_response =  get_ai_response(f"Tenant Law Question: {user_input}\nAnswer:")
             ai_response = "s an AI legal assistant specializing in household and tenant law, your task is to provide users with comprehensive information on the rights and responsibilities of tenants and landlords. You should be equipped to discuss lease agreements, rent control, eviction processes, and other relevant legal matters. Be prepared to reference case laws and legal resources when necessary to support your advice. It's important that your responses are clear, accurate, and reflect the most current legal standards and practices. Your goal is to assist users in understanding their legal position"
             # Append user input and AI response to the interactions list
-            if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
-                print("goes hereeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee")
-                return ai_response  # Return just the AI response for AJAX requests
+    
             interactions.append({'type': 'user', 'text': user_input})
             interactions.append({'type': 'ai', 'text': ai_response})
             

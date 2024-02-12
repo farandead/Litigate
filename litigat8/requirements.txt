@@ -1,0 +1,5 @@
+Flask
+MarkupSafe
+Werkzeug
+requests
+openai

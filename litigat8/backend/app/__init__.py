@@ -11,7 +11,9 @@ import os
 
 def create_app():
     app = Flask(__name__)
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:@localhost:3306/litigat8'
+    # app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:@localhost:3306/litigat8'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:@viaduct.proxy.rlwy.net:58016/litigat8'
+
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.secret_key = 'your secret key'
     responses = []

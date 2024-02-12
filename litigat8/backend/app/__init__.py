@@ -115,8 +115,9 @@ def create_app():
         if request.method == 'POST':
             username = request.form['username']
             password = request.form['password']
-
+            print(username,password)
             hashed_password = generate_password_hash(password)
+            print(hashed_password)
             new_user = User(username=username, password=hashed_password)
             db.session.add(new_user)
             db.session.commit()
@@ -129,8 +130,17 @@ def create_app():
         if request.method == 'POST':
             username = request.form['username']
             password = request.form['password']
+            print(username,password)
+            test_password = "examplePassword"
+            hashed = generate_password_hash(test_password)
 
+            if check_password_hash(hashed, test_password):
+                print("Password check successful.")
+            else:
+                print("Password check failed.")
             user = User.query.filter_by(username=username).first()
+            print(user.password)
+            print(check_password_hash(user.password, password))
             if user and check_password_hash(user.password, password):
                 session['user_id'] = user.id
                 return redirect(url_for('home'))

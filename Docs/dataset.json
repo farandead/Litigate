@@ -1,0 +1,98 @@
+[
+    {
+      "type": "FAQ",
+      "question": "What rights do I have as a tenant in the UK?",
+      "answer": "Tenants in the UK have the right to live in a property that's safe and in a good state of repair, have their deposit returned at the end of the tenancy, challenge excessively high charges, and know who their landlord is. This information is based on the Housing Act 1988 and the Landlord and Tenant Act 1985."
+    },
+    {
+      "type": "FAQ",
+      "question": "How much notice does my landlord have to give to increase rent?",
+      "answer": "For periodic tenancies (rolling on a week-by-week or month-by-month basis), your landlord must give you notice of rent increase at least one month. For fixed-term tenancies, the notice period depends on the terms of your tenancy agreement. This is guided by the Landlord and Tenant Act 1985."
+    },
+    {
+      "type": "Legal Document Annotation",
+      "text": "The Protection from Eviction Act 1977 requires landlords to provide tenants with a notice period before eviction.",
+      "annotations": [
+        {
+          "tag": "Eviction Notice Period",
+          "jurisdiction": "UK",
+          "section": "Protection from Eviction Act 1977",
+          "notice_period": "Varies depending on the eviction reason and tenancy type."
+        }
+      ]
+    },
+    {
+      "type": "Structured Legal Advice",
+      "scenario": "Repair Responsibilities",
+      "jurisdiction": "UK",
+      "advice": [
+        {
+          "condition": "If a rental property requires repairs",
+          "steps": [
+            "Tenants should notify their landlords in writing.",
+            "Landlords are legally required to make most repairs to properties, including structure and exterior, heating and hot water systems.",
+            "If landlords fail to make repairs, tenants may contact their local council."
+          ],
+          "legal_references": ["Landlord and Tenant Act 1985, Section 11"]
+        }
+      ]
+    },
+    {
+      "type": "Case Law",
+      "case_name": "Edwards v Kumarasamy [2016] UKSC 40",
+      "summary": "The Supreme Court ruled that landlords can be held liable for injuries caused by defects in the common parts of a property, even if they were not notified of the defect.",
+      "jurisdiction": "UK",
+      "relevant_laws": ["Landlord and Tenant Act 1985"],
+      "outcome": "Landlord held liable."
+    },
+    {
+      "type": "Case Law",
+      "case_name": "R (on the application of Unison) v Lord Chancellor [2017] UKSC 51",
+      "summary": "The Supreme Court declared employment tribunal fees unlawful under UK and EU law, stating they prevented access to justice.",
+      "jurisdiction": "UK",
+      "relevant_laws": ["Employment Tribunals Act 1996"],
+      "outcome": "Tribunal fees unlawful."
+    },
+    {
+        "type": "FAQ",
+        "question": "Can I be evicted by my landlord?",
+        "answer": "In the UK, landlords can evict tenants but must follow a legal process, which includes providing proper notice and obtaining a court order for eviction in most cases. The specific process depends on the type of tenancy agreement and the reasons for eviction."
+      },
+      {
+        "type": "Legal Document Annotation",
+        "text": "The Housing Act 1988 outlines the procedures landlords must follow to lawfully evict tenants, including serving a valid Section 21 or Section 8 notice.",
+        "annotations": [
+          {
+            "tag": "Eviction Process",
+            "jurisdiction": "UK",
+            "section": "Housing Act 1988",
+            "notice_types": ["Section 21", "Section 8"]
+          }
+        ]
+      },
+      {
+        "type": "Structured Legal Advice",
+        "scenario": "Facing Eviction",
+        "jurisdiction": "UK",
+        "advice": [
+          {
+            "condition": "If a landlord wants to evict a tenant",
+            "steps": [
+              "Verify the type of tenancy agreement to understand the eviction process.",
+              "Landlords must provide a written eviction notice (Section 21 or Section 8), specifying the eviction date and reason.",
+              "Tenants can challenge the eviction if the landlord has not followed the procedure correctly.",
+              "If the notice period expires, the landlord must apply to the court for an eviction order."
+            ],
+            "legal_references": ["Housing Act 1988"]
+          }
+        ]
+      },
+      {
+        "type": "Case Law",
+        "case_name": "McDonald v Fernandez [2003] EWCA Civ 1219",
+        "summary": "The Court of Appeal held that landlords must strictly adhere to the procedural requirements set out in the Housing Act 1988 when evicting tenants, emphasizing the importance of correct notice serving.",
+        "jurisdiction": "UK",
+        "relevant_laws": ["Housing Act 1988"],
+        "outcome": "Emphasized the need for landlords to follow eviction procedures correctly."
+      }
+  ]

@@ -1,0 +1,89 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Litigate AI Assistant</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    {% with messages = get_flashed_messages() %} {% if messages %} {% for
+    message in messages %}
+    <!-- Display your message -->
+    <div>{{ message }}</div>
+    {% endfor %} {% endif %} {% endwith %}
+    <div id="main-content-container">
+      <div id="container0">
+        <div class="side-panel-container">Litigat<strong>8</strong></div>
+        <div class="chat-history-panel" id="chat-history-panel">
+         
+        </div>
+        <div class="side-panel-container-info">
+          <div class="login-details">
+            <img
+              src="{{ url_for('static', filename='img/person-circle.svg') }}"
+              alt="Logo"
+            />
+            <p>{{ user.username }}</p>
+          </div>
+          <div class="logout-container">
+            <button  id="start-new-session" class="logout_button" style="color: white;">New Chat</button>
+            <a style="color: white; text-decoration: none" href="/auth/logout"
+              ><button class="logout_button">Log out</button></a
+            >
+          </div>
+        </div>
+      </div>
+      <div id="container">
+        <div class="heading-container">
+          <img
+            src="{{ url_for('static', filename='img/LitigateLogo.png') }}"
+            alt="Logo"
+          />
+          <p>How can I help you today?</p>
+        </div>
+        <div id="output">
+    
+      
+        </div>
+        <form id="input-form" action="chat/submit" method="POST">
+          <input
+            type="text"
+            id="user_input"
+            name="user_input"
+            placeholder="Type your legal query here..."
+          />
+          <button id="sendbutton" type="submit">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-send"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"
+              />
+            </svg>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <style>
+      .cursor {
+        border-right: 0.1em solid;
+        animation: blink-caret 0.7s step-end infinite;
+      }
+
+      @keyframes blink-caret {
+        50% {
+          border-color: transparent;
+        }
+      }
+    </style>
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+  </body>
+</html>

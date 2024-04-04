@@ -1,0 +1,45 @@
+raph TD
+
+subgraph frontend["Frontend (HTML/CSS/JavaScript)"]
+    loginPage[("Login/Register Page")]
+    dashboardPage[("Dashboard Page")]
+    queryForm[("Query Input Form")]
+    adviceSection[("Advice Display Section")]
+    chatInterface[("Chat Interface")]
+
+    loginPage -->|Auth| dashboardPage
+    dashboardPage -->|Submit| queryForm
+    queryForm -->|Request| adviceSection
+    dashboardPage -->|Interact| chatInterface
+end
+
+subgraph backend["Backend (Flask)"]
+    appPy[("/app.py Main Application")]
+    modelsPy[("/models.py ORM Models")]
+    nlpEnginePy[("/nlp_engine.py NLP Processing")]
+    authPy[("/auth.py Authentication")]
+    chatHandlerPy[("/chat_handler.py Chat Handling")]
+    
+    appPy --> modelsPy
+    appPy -->|Process Query| nlpEnginePy
+    appPy -->|Auth| authPy
+    appPy -->|Chat| chatHandlerPy
+end
+
+subgraph database["Database (MySQL)"]
+    usersTable[("Users")]
+    queriesTable[("UserQueries")]
+    resultsTable[("QueryResults")]
+    analysisTable[("NLPAnalysis")]
+    responsesTable[("AdviceResponses")]
+    chatHistoriesTable[("ChatHistories")]
+
+    usersTable -->|Linked to| queriesTable
+    queriesTable -->|Produces| resultsTable
+    queriesTable -->|Analyzed by| analysisTable
+    analysisTable -->|Generates| responsesTable
+    usersTable -->|Participates in| chatHistoriesTable
+end
+
+frontend -->|API Calls| backend
+backend -->|CRUD Operations| database

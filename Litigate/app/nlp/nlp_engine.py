@@ -1,6 +1,6 @@
 import os
 
-
+os.environ["OPENAI_API_KEY"] = "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"
 
 from langchain_community.vectorstores import Chroma
 # from langchain_community.embeddings import OpenAIEmbeddings

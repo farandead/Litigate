@@ -33,7 +33,7 @@ Before setting up Litigate, ensure you have:
    ```bash
    pip install -r requirements.txt
 
-### Configure Api Keys and Models
+## Configure Api Keys and Models
 1. **GPT Models Configuration**
    Set your OpenAI API key in 'app/nlp/nlp_engine.py':
    ```bash
@@ -49,6 +49,26 @@ Before setting up Litigate, ensure you have:
                           'temperature':0.8,
                           'context_length' : 2048})
    qa_chain = make_chain(llm,retriver,chain_type_kwargs)
+
+## Set Up the Vector Database
+
+To set up the vector database necessary for the project, follow these steps:
+
+1. **Navigate to the Vector Database Setup Directory**
+   Change to the directory where the setup script is located:
+   ```bash
+   cd app/nlp
+   ```
+
+2. **Run the Setup Script**
+   Execute the setup script to configure the vector database:
+   ```bash
+   python setup_vector_database.py
+   ```
+
+## Adding Extra Context for the Model
+
+- If you need to add extra context or additional data files for the model to use, place them in the `data` folder located within the `app/nlp` directory.
 
 ## Usage
 

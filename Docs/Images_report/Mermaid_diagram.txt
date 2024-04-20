@@ -1,0 +1,46 @@
+erDiagram
+    USERS {
+        int UserID PK "Primary Key"
+        varchar Username
+        varchar PasswordHash
+        varchar Email
+        datetime CreationDate
+        datetime LastLoginDate
+    }
+    USERQUERIES {
+        int QueryID PK "Primary Key"
+        int UserID FK "Foreign Key"
+        text QueryText
+        datetime Timestamp
+    }
+    QUERYRESULTS {
+        int ResultID PK "Primary Key"
+        int QueryID FK "Foreign Key"
+        float RelevanceScore
+    }
+    NLPANALYSIS {
+        int AnalysisID PK "Primary Key"
+        int QueryID FK "Foreign Key"
+        varchar Intent
+        text Keywords
+        datetime ProcessedDate
+    }
+    ADVICERESPONSES {
+        int ResponseID PK "Primary Key"
+        int AnalysisID FK "Foreign Key"
+        text AdviceText
+        datetime ResponseDate
+    }
+    CHAT_HISTORIES {
+        int ChatID PK "Primary Key"
+        int UserID FK "Foreign Key"
+        text Message
+        varchar Sender "user/system"
+        datetime Timestamp
+    }
+
+    USERS ||--o{ USERQUERIES : "makes"
+    USERS ||--o{ CHAT_HISTORIES : "participates in"
+    USERQUERIES ||--o{ QUERYRESULTS : "produces"
+    USERQUERIES ||--|| NLPANALYSIS : "analyzed by"
+    NLPANALYSIS ||--o{ ADVICERESPONSES : "generates"

@@ -35,6 +35,12 @@ turbo_llm = ChatOpenAI(
     temperature=0,
     model_name='gpt-3.5-turbo'
 )
+
+llm=CTransformers(model="llama-2-7b-chat.ggmlv3.q4_0.bin",
+                  model_type="llama",
+                  config={'max_new_tokens':4096,
+                          'temperature':0.8,
+                          'context_length' : 2048})
 def load_pdf(data):
     loader = DirectoryLoader(data,
                     glob="*.pdf",

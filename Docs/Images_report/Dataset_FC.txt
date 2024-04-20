@@ -1,0 +1,25 @@
+graph TD
+    A[Start] --> B[Data Collection]
+    B --> C[Legal Texts, FAQs, Case Law Databases, Government Websites]
+    C --> D[Data Processing]
+    D --> E["Preprocessing: Cleaning, Normalizing"]
+    E --> F["Annotation: Tagging Legal References, Summarizing Case Laws"]
+    F --> G[Data Structuring]
+    G --> H{Dataset Parts}
+    H --> I[FAQs]
+    H --> J[Legal Document Annotations]
+    H --> K[Structured Legal Advice]
+    H --> L[Case Law Summaries]
+    I --> M[Merge Dataset]
+    J --> M
+    K --> M
+    L --> M
+    M --> N[Quality Assurance]
+    N --> O[Review and Verification by Legal Experts]
+    O --> P[Testing in Development Environment]
+    P --> Q[Final Dataset Ready for NLP Model Training]
+    Q --> R[End]
+
+style A fill:#f9f,stroke:#333,stroke-width:4px
+style R fill:#bbf,stroke:#333,stroke-width:4px
+style H fill:#ff9,stroke:#333,stroke-width:2px

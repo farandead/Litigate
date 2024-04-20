@@ -23,15 +23,57 @@ Before setting up Litigate, ensure you have:
    ```bash
    git clone https://github.com/farandead/Litigate.git
    cd Litigate
-2. **Set Up a Conda Environment**
-  Create and activate a Conda environment with:
-  ```bash
-    conda create --name litigate python=3.11
-    conda activate litigate
-
+1. **Clone the Repository**
+   Clone Litigate to your local machine using the following command:
+   ```bash
+   git clone https://github.com/farandead/Litigate.git
+   cd Litigate
 3. **Install Dependencies**
+   Install the required Python packages with:
+   ```bash
+   pip install -r requirements.txt
 
-  Install the required Python packages with::
-  ```bash
-     pip install -r requirements.txt
+### Configure Api Keys and Models
+1. **GPT Models Configuration**
+   Set your OpenAI API key in 'app/nlp/nlp_engine.py':
+   ```bash
+   import os
+   os.environ["OPENAI_API_KEY"] = "your_openai_api_key_here"
+2. **LLaMA 2 Configuration**
+   Download the LLaMA model from the provided link 'https://huggingface.co/TheBloke/Llama-2-7B-Chat-GGML/blob/main/llama-2-7b-chat.ggmlv3.q4_0.bin' or if your working with a different model then change the name of the model in nlp_engine.py    
+   accordingly and place it in the same directory as nlp_engine.py. Replace the existing Q/A chain setup:
+   ```bash
+   llm=CTransformers(model="llama-2-7b-chat.ggmlv3.q4_0.bin",
+                  model_type="llama",
+                  config={'max_new_tokens':4096,
+                          'temperature':0.8,
+                          'context_length' : 2048})
+   qa_chain = make_chain(llm,retriver,chain_type_kwargs)
+
+## Usage
+
+To use Litigate, run the following command in your project directory:
+```bash
+flask run
+```
+
+## Contributing
+
+We encourage community contributions. Please read our contributing guidelines for more information on how to contribute.
+
+## License
+
+Litigate is available under the MIT License. See the LICENSE file for more details.
+
+## Contact
+
+Faran Zafar - faranzafarcs@gmail.com
+
+## Acknowledgements
+
+- OpenAI for the AI models.
+- Contributors who have helped to improve this tool.
+
+
+
 

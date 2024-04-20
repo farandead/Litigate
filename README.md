@@ -16,7 +16,7 @@ Litigate leverages state-of-the-art large language models such as GPT-3.5, GPT-3
 
 ### Prerequisites
 Before setting up Litigate, ensure you have:
-- An OpenAI API key.
+- An OpenAI API key or a LLAMA model downloaded on the device.
 - Python 3.11 or newer installed.
 - Conda as your environment manager.
 

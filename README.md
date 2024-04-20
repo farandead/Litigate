@@ -1,4 +1,5 @@
-![Logo](https://github.com/farandead/Litigate/blob/main/images/logo.png)
+![Litigate Logo](https://github.com/farandead/Litigate/blob/main/Docs/Images_report/Artboard_1-removebg-preview.png)
+
 # Litigate
 
 ## Introduction

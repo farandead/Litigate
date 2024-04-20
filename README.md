@@ -1,5 +1,5 @@
-<p align="center">
-  <img src="https://github.com/farandead/Litigate/blob/main/Docs/Images_report/Artboard_1-removebg-preview.png" width="400">
+<p align="center" style="margin-top: -10px; margin-bottom: -10px;">
+  <img src="https://github.com/farandead/Litigate/blob/main/Docs/Images_report/Artboard_1-removebg-preview.png" width="400" style="margin-top: -10px; margin-bottom: -10px;">
 </p>
 
 # Litigate

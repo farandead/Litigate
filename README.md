@@ -27,11 +27,7 @@ Before setting up Litigate, ensure you have:
    ```bash
    git clone https://github.com/farandead/Litigate.git
    cd Litigate
-1. **Clone the Repository**
-   Clone Litigate to your local machine using the following command:
-   ```bash
-   git clone https://github.com/farandead/Litigate.git
-   cd Litigate
+
 3. **Install Dependencies**
    Install the required Python packages with:
    ```bash

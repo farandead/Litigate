@@ -27,8 +27,15 @@ Before setting up Litigate, ensure you have:
    ```bash
    git clone https://github.com/farandead/Litigate.git
    cd Litigate
-
-3. **Install Dependencies**
+2. **Create a virtual enovironment **
+   Create a virtual enviornment on your local machine using the following command:
+   ```bash
+   conda create --name litigat8 python=3.11
+3. **Activate virtual enovironment **
+   Activate the virtual enviornment on your local machine using the following command:
+   ```bash
+   conda activate litigat8  
+4. **Install Dependencies**
    Install the required Python packages with:
    ```bash
    pip install -r requirements.txt
